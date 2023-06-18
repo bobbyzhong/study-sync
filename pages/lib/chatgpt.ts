@@ -6,16 +6,15 @@ export default class ChatGPT {
     top_p: number;
     frequency_penalty: number;
     presence_penalty: number;
-    apiKey: string;
+
     constructor() {
         this.url = "https://api.openai.com/v1";
         this.model = "gpt-3.5-turbo";
-        this.temperature = 0.9;
-        this.max_tokens = 2048;
+        this.temperature = 0;
+        this.max_tokens = 3000;
         this.top_p = 0;
         this.frequency_penalty = 0;
         this.presence_penalty = 0;
-        this.apiKey = "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"!;
     }
 
     async getCompletion(prompt: string) {
@@ -24,14 +23,16 @@ export default class ChatGPT {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${this.apiKey}`,
+                Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
             },
             body: JSON.stringify({
                 model: this.model,
                 messages: [
                     {
                         role: "system",
-                        content: `Your task is to take the body of text I give you and give me a 5 question multiple choice quiz based on that content. Structure your response as json with three arrays: array with the questions, array with all answer choices, array with correct answers. Give each question 3 answer choices and one correct answer. 
+                        content: `Your task is to take the body of text generate a one line string that's a 3 question multiple choice quiz based on that content. 
+                        Output the string in this exact format: "(question 1) (question 2) (question 3) / [A. choice1, B. choice2, C. choice3], [A. choice1, B. choice2, C. choice3], [A. choice1, B. choice2, C. choice3] / ABA". Everything in parenthesis is dynamic and should be determined based 
+                        on the content given but everything outside the parenthesis should be in the same exact format. All the brackets, commas, slashes in that example format should exactly the same. Group each question's answer choices together by brackets. 
                          `,
                     },
                     { role: "user", content: prompt },

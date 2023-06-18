@@ -79,13 +79,13 @@ export function LargeInputBox({
             </label>
             <textarea
                 className={`mt-3
-               border py-2 px-4 rounded-xl shadow-md}
+               border py-2 px-4 rounded-xl shadow-md  }
                 ${statusCompleted ? "" : ""}  `}
                 name={name}
                 placeholder={placeholder}
                 onChange={handleChange}
                 required={true}
-                rows={4}
+                rows={12}
                 value={value}
             />
         </div>
