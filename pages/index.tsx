@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { LargeInputBox } from "./components/Inputs";
+import LargeInputBox from "./components/Inputs";
 import Clickable from "@/components/Clickable";
 
-import ChatGPT from "./lib/chatgpt";
+// import ChatGPT from "./lib/chatgpt";
 function App() {
     const [response, setResponse] = useState<any>("");
     const [currQuest, setCurrQuest] = useState(0);
@@ -16,10 +16,10 @@ function App() {
     const [quizReq, setQuizReq] = useState<any>(false);
 
     async function getSummary() {
-        const response = await new ChatGPT().getCompletion(content);
+        // const response = await new ChatGPT().getCompletion(content);
 
-        // const response =
-        //     "Where do penguins generally live? [A. Islands and remote continental regions, B. Forests and jungles, C. Deserts] / What are penguins adapted to? [A. Living on land, B. Living in the sea, C. Flying] / In what type of climate do emperor penguins thrive? [A. Tropical, B. Arctic, C. Antarctic] / ABC";
+        const response =
+            "Where do penguins generally live? [A. Islands and remote continental regions, B. Forests and jungles, C. Deserts] / What are penguins adapted to? [A. Living on land, B. Living in the sea, C. Flying] / In what type of climate do emperor penguins thrive? [A. Tropical, B. Arctic, C. Antarctic] / ABC";
 
         console.log(response);
         let sections = response.split("/");

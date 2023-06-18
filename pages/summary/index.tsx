@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
-import { LargeInputBox } from "../components/Inputs";
+import LargeInputBox from "../components/Inputs";
 import Clickable from "@/components/Clickable";
 
-import ChatGPT from "../lib/chatgptsum";
+// import ChatGPT from "../lib/chatgptsum";
 function App() {
     const [response, setResponse] = useState<any>("");
     const [summary, setSummary] = useState("");
     const [content, setContent] = useState("");
 
     async function getSummary() {
-        const response = await new ChatGPT().getCompletion(content);
+        // const response = await new ChatGPT().getCompletion(content);
 
-        // const response =
-        //     "Penguins live in areas free from land predators and near nutrient-rich, cold-water currents. They are adapted to living at sea and some species spend months at a time there. Different species thrive in varying climates, ranging from tropical islands to the pack ice and waters of Antarctica. / The seasons of the Southern Hemisphere are opposite those of the Northern Hemisphere. / The most southerly penguin colony in the world are a group of Adélies that regularly nest near Camp Royds, Antarctica.";
+        const response =
+            "Penguins live in areas free from land predators and near nutrient-rich, cold-water currents. They are adapted to living at sea and some species spend months at a time there. Different species thrive in varying climates, ranging from tropical islands to the pack ice and waters of Antarctica. / The seasons of the Southern Hemisphere are opposite those of the Northern Hemisphere. / The most southerly penguin colony in the world are a group of Adélies that regularly nest near Camp Royds, Antarctica.";
 
         setSummary(response);
         console.log(response);
