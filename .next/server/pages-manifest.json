@@ -2,11 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.html",
-  "/components/Inputs": "pages/components/Inputs.html",
-  "/api/hello": "pages/api/hello.js",
-  "/": "pages/index.html",
-  "/lib/chatgptsum": "pages/lib/chatgptsum.html",
-  "/lib/chatgpt": "pages/lib/chatgpt.html",
-  "/summary": "pages/summary.html"
+  "/": "pages/index.js"
 }

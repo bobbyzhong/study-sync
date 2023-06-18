@@ -74,7 +74,24 @@ function App() {
         <div className="App p-6 h-72">
             <div className="mb-2 font-bold ">StudySync</div>
             <hr className="border-b-3 py-2"></hr>
+
             <div className="px-20">
+                <div className="font-medium">
+                    Having some issues with nextjs deployment so results are
+                    based on the following content:
+                </div>
+                <div>
+                    Penguins generally live on islands and remote continental
+                    regions free from land predators, where their inability to
+                    fly is not detrimental to their survival. These highly
+                    specialized marine birds are adapted to living at sea — some
+                    species spend months at a time at sea. Penguins are usually
+                    found near nutrient-rich, cold-water currents that provide
+                    an abundant supply of food. Different species thrive in
+                    varying climates, ranging from Galápagos penguins on
+                    tropical islands at the equator to emperor penguins
+                    restricted to the pack ice and waters of Antarctica.
+                </div>
                 <div className=" ">
                     <LargeInputBox
                         label="Create an AI generated quiz!"

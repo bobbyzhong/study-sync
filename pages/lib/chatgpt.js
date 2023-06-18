@@ -54,7 +54,6 @@
 //         }
 //     }
 // }
-
-export default function Test2() {
+export default function Test() {
     return <div>hi</div>;
 }
